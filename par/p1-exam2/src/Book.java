@@ -70,7 +70,7 @@ public class Book {
     }
     
     public void setTimesLoaned(int timesLoaned) {
-        this.timesLoaned = ++timesLoaned;
+        this.timesLoaned = timesLoaned;
     }
     
     /**

@@ -6,7 +6,8 @@ import java.util.LinkedList;
 public class Library {
     private String name;
     static boolean archived=false;
-    private LinkedList books;
+    private LinkedList books; 
+    private LinkedList authors;
     
     /**
      * Constructor para crear una biblioteca
@@ -15,6 +16,7 @@ public class Library {
     public Library(String name) {
         this.name = name;
         this.books = new LinkedList();
+        this.authors = new LinkedList();
     }
     
     // Getters
@@ -160,13 +162,15 @@ public class Library {
             totalBooks, availableBooks, loanedBooks
         );
     }
-    
+
     /**
      * Representación legible de la biblioteca
      * @return String con la información de la biblioteca
      */
     @Override
     public String toString() {
-        return "Nombre de la biblioteca: " + name;
+        // Incluir el número total de libros en la representación
+        int total = books != null ? books.size() : 0;
+        return "Nombre de la biblioteca: " + name + " | Total de Libros: " + total;
     }
 }

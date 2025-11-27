@@ -28,8 +28,15 @@ public class LinkedList {
     }
     
     
-    public void get(int index) {
- 
+    public Object get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango: " + index);
+        }
+        Node<Book> actual = head;
+        for (int i = 0; i < index; i++) {
+            actual = actual.next;
+        }
+        return actual.data;
     }
     
     
